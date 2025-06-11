@@ -1,0 +1,32 @@
+1.app.py
+
+from flask import Flask, render_template, url_for
+app = Flask(__name__)
+@app.route('/')
+def index():
+    return render_template('index.html')
+if __name__=="__main__":
+    app.run(debug=True)
+
+2.index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ramyasree</h1> 
+</body>
+</html>
+
+3.main.css
+
+
+body{
+    margin=0;
+    font-family: 'Times New Roman';
+}

@@ -1,0 +1,39 @@
+🎨 Styling My Flask App with CSS
+After successfully rendering an HTML page using Flask, I wanted to style it using CSS. Here’s how I did it step-by-step:
+
+1. Create a CSS File in the Static Folder
+Inside my project folder, I already had a static folder (Flask uses this for all static files like CSS, images, and JavaScript).
+
+Inside static, I created a new folder called css.
+
+Then, I created a file inside it named main.css.
+
+My folder structure now looked like this:
+project/
+├── app.py
+├── static/
+│   └── css/
+│       └── main.css
+├── templates/
+│   └── index.html
+2. Add Some Basic CSS
+In main.css, I wrote a few simple styles:
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+3. Link the CSS File in My HTML
+To apply the styles, I linked the CSS file inside the <head> tag of my index.html using Flask's url_for function:
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+This is the correct way to link static files in Flask so it can serve them properly.
+4. Update app.py to Include url_for
+In my app.py, I made sure to import url_for along with render_template:
+from flask import Flask, render_template, url_for
+5. Run the App and See the Style
+I saved everything and run the app:
+python app.py
+When I opened the browser, I saw that the HTML page was now styled with no margin and a Times New Roman font.
+
+✅ Summary
+This is how I added a custom CSS file to my Flask project.
+By placing it in the static folder and linking it with url_for, I was able to keep my HTML clean and easily manage styles in one place.

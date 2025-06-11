@@ -1,0 +1,43 @@
+Connecting Flask with HTML Using Templates
+Once I set up Flask, I wanted to render an HTML page instead of just showing plain text. Here's how I did that step-by-step:
+
+1. Create Folders for Templates and Static Files
+Inside my project folder, I created two special folders:
+
+templates → this is where all the HTML files go
+
+static → this is for CSS, images, and JavaScript files (even though I didn’t use it yet)
+
+These folder names are important because Flask looks for them by default.
+
+2. Create an HTML File
+Inside the templates folder, I created a file called index.html.
+
+To quickly generate basic HTML structure in VS Code:
+
+Open the file
+
+Type ! and hit Enter
+This auto-fills the standard HTML boilerplate code.
+
+Then, inside the <body> section of the HTML, I added my own content:
+now type helloworld 2 
+3. Modify app.py to Render the HTML
+In my app.py file, I made the following changes:
+
+Import the render_template function from Flask:
+from flask import Flask, render_template
+Update the route to return the HTML file:
+def index():
+    return render_template('index.html')
+
+make these changes in ur app.py file and its an extenstion of that file now save and run the file 
+. Run the Flask App
+I saved all files and then run the app using:
+python app.py
+When I opened the browser at http://127.0.0.1:5000, I saw the content from index.html, and it displayed:
+Hello World 2
+✅ Summary
+This is how I connected Flask to an HTML page using templates. 
+It was a small change, but it opened the door to designing full websites with Flask!
+Now I can build pages with HTML and later add CSS and JavaScript from the static folder.
